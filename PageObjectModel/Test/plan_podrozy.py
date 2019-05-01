@@ -6,7 +6,7 @@ from time import sleep
 
 
 
-class Logowanie_Pages(unittest.TestCase):
+class PlanPodrozy_Pages(unittest.TestCase):
 
     def setUp(self):
         #self.driver = webdriver.Chrome(executable_path=r'C:\driver_selenium\ChromeDrive_74\chromedriver.exe')
@@ -25,4 +25,9 @@ class Logowanie_Pages(unittest.TestCase):
         self.driver.find_element_by_xpath("//*[@name='userName']").send_keys('marcelina.kos@interia.pl')
         self.driver.find_element_by_xpath("//*[@name='password']").send_keys('Test123')
         self.driver.find_element_by_xpath("//*[@name='login']").click()
+        self.driver.find_element_by_xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/a").click()
+        print(driver.find_element_by_xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/a").text)
+        assert driver.find_element_by_xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/a").text == "ITINERARY"
 
+if __name__ == '__main__':
+    unittest.min()
