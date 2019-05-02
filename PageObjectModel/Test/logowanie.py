@@ -25,3 +25,6 @@ class Logowanie_Pages(unittest.TestCase):
         login.enter_password('Test123')
         login.click_login()
         sleep(7)
+
+if __name__ == '__main__':
+    unittest.min()

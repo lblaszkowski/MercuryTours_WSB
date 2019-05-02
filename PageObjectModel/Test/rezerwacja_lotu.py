@@ -12,6 +12,7 @@ from time import sleep
 
 class NewtoursDemoautRegistration(unittest.TestCase):
 
+    @classmethod
     def setUp(self):
         # self.driver = webdriver.Chrome(executable_path=r'C:\driver_selenium\ChromeDrive_74\chromedriver.exe')
         self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
@@ -94,3 +95,5 @@ class NewtoursDemoautRegistration(unittest.TestCase):
         self.driver.find_element_by_xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[7]/td/table/tbody/tr/td[3]/a/img").click()
 
 
+if __name__ == '__main__':
+    unittest.min()

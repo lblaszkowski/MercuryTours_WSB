@@ -39,7 +39,7 @@ class NewtoursDemoautRegistration(unittest.TestCase):
         registration.field_password('Test123')
         registration.field_confirmPassword('Test123')
         registration.click_register()
-        sleep(7)
 
-
+if __name__ == '__main__':
+    unittest.min()
 
