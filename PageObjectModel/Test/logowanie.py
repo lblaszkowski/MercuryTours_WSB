@@ -4,13 +4,13 @@ from selenium import webdriver
 from time import sleep
 from PageObjectModel.Pages.logowaniePage import LogowaniePages
 
-
 class Logowanie_Pages(unittest.TestCase):
 
+    @classmethod
     def setUp(self):
-        #self.driver = webdriver.Chrome(executable_path=r'C:\driver_selenium\ChromeDrive_74\chromedriver.exe')
         self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
 
+    @classmethod
     def tearDown(self):
         self.driver.close()
         self.driver.quit()
@@ -24,7 +24,9 @@ class Logowanie_Pages(unittest.TestCase):
         login.enter_username('marcelina.kos@interia.pl')
         login.enter_password('Test123')
         login.click_login()
-        sleep(7)
+
+
 
 if __name__ == '__main__':
     unittest.min()
+

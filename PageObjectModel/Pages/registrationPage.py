@@ -1,6 +1,8 @@
 from PageObjectModel.Locators.locator import Locators
 from selenium.webdriver.support.ui import Select
 
+
+
 class RegistrationPage():
 
 
@@ -37,9 +39,9 @@ class RegistrationPage():
     def field_postalCode(self, postalCode):
         self.driver.find_element_by_xpath(Locators.postalCode_field_xpath).send_keys(postalCode)
 
-    # def field_select(self, country):
-    #     select = Select(self.driver.find_element_by_xpath(Locators.select_field_name)).click()
-    #     select.select_by_visible_text(country)
+    def field_select(self, country):
+        select = Select(self.driver.find_element_by_xpath(Locators.select_field_name))
+        select.select_by_visible_text(country)
 
     def field_email(self, email):
         self.driver.find_element_by_id(Locators.email_field_id).send_keys(email)

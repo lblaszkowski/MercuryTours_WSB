@@ -11,7 +11,6 @@ from PageObjectModel.Pages.planTravelsPage import PlanTravelsPage
 class PlanPodrozy_Pages(unittest.TestCase):
 
     def setUp(self):
-        #self.driver = webdriver.Chrome(executable_path=r'C:\driver_selenium\ChromeDrive_74\chromedriver.exe')
         self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
 
 
@@ -32,6 +31,7 @@ class PlanPodrozy_Pages(unittest.TestCase):
         login.click_login()
         plantravels = PlanTravelsPage(driver)
         plantravels.click_flights()
+        sleep(5)
 
 
 if __name__ == '__main__':

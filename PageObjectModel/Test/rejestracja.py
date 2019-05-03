@@ -5,13 +5,11 @@ from time import sleep
 from PageObjectModel.Pages.registrationPage import RegistrationPage
 
 
-
 class NewtoursDemoautRegistration(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path=r'C:\driver_selenium\ChromeDrive_74\chromedriver.exe')
         # self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
-
 
 
     def tearDown(self):
@@ -34,7 +32,7 @@ class NewtoursDemoautRegistration(unittest.TestCase):
         registration.field_city('Sopot')
         registration.field_state('Sopot')
         registration.field_postalCode('12-098')
-        # registration.field_select('POLAND')
+        registration.field_select('POLAND')
         registration.field_email('marcelina.kos@interia.pl')
         registration.field_password('Test123')
         registration.field_confirmPassword('Test123')

@@ -14,7 +14,6 @@ class NewtoursDemoautRegistration(unittest.TestCase):
 
     @classmethod
     def setUp(self):
-        # self.driver = webdriver.Chrome(executable_path=r'C:\driver_selenium\ChromeDrive_74\chromedriver.exe')
         self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
         self.driver.get('http://newtours.demoaut.com/')
         self.driver.maximize_window()
