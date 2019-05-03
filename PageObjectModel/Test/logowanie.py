@@ -1,7 +1,7 @@
 # _*_ coding: utf-8 _*_
 import unittest
 from selenium import webdriver
-from time import sleep
+import datetime
 from PageObjectModel.Pages.logowaniePage import LogowaniePages
 
 class Logowanie_Pages(unittest.TestCase):
@@ -9,9 +9,15 @@ class Logowanie_Pages(unittest.TestCase):
     @classmethod
     def setUp(self):
         self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
+        print("-----------------")
+        print("Run Started at :" + str(datetime.datetime.now()))
+
+
 
     @classmethod
     def tearDown(self):
+        print("-----------------------------------------------------")
+        print("Run Completed at :" + str(datetime.datetime.now()))
         self.driver.close()
         self.driver.quit()
 

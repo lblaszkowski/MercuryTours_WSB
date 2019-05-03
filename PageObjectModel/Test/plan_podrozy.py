@@ -2,7 +2,7 @@
 
 import unittest
 from selenium import webdriver
-from time import sleep
+import datetime
 from PageObjectModel.Pages.logowaniePage import LogowaniePages
 from PageObjectModel.Pages.planTravelsPage import PlanTravelsPage
 
@@ -12,9 +12,14 @@ class PlanPodrozy_Pages(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
+        print("-----------------")
+        print("Run Started at :" + str(datetime.datetime.now()))
+
 
 
     def tearDown(self):
+        print("------------------------------------------------------------------")
+        print("Run Completed at :" + str(datetime.datetime.now()))
         self.driver.close()
         self.driver.quit()
 
@@ -31,7 +36,7 @@ class PlanPodrozy_Pages(unittest.TestCase):
         login.click_login()
         plantravels = PlanTravelsPage(driver)
         plantravels.click_flights()
-        sleep(5)
+
 
 
 if __name__ == '__main__':

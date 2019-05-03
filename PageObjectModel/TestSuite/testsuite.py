@@ -10,6 +10,7 @@ def smoke_suite():
     test_suite.addTest(makeSuite(Logowanie_Pages))
 
 
+
     return test_suite
 
 

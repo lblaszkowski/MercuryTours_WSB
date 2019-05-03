@@ -1,18 +1,22 @@
 # _*_ coding: utf-8 _*_
 import unittest
 from selenium import webdriver
-from time import sleep
+import datetime
 from PageObjectModel.Pages.registrationPage import RegistrationPage
 
 
 class NewtoursDemoautRegistration(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome(executable_path=r'C:\driver_selenium\ChromeDrive_74\chromedriver.exe')
-        # self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
+        self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
+        print("-----------------")
+        print("Run Started at :" + str(datetime.datetime.now()))
+
 
 
     def tearDown(self):
+        print("------------------------------------------------------------------")
+        print("Run Completed at :" + str(datetime.datetime.now()))
         self.driver.close()
         self.driver.quit()
 
