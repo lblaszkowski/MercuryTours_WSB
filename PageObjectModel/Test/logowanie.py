@@ -4,6 +4,7 @@ from selenium import webdriver
 import datetime
 from PageObjectModel.Pages.logowaniePage import LogowaniePages
 
+
 class Logowanie_Pages(unittest.TestCase):
 
     @classmethod
@@ -11,7 +12,6 @@ class Logowanie_Pages(unittest.TestCase):
         self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
         print("-----------------")
         print("Run Started at :" + str(datetime.datetime.now()))
-
 
 
     @classmethod
@@ -34,5 +34,5 @@ class Logowanie_Pages(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.min()
+     unittest.min()
 
