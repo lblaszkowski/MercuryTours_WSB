@@ -5,18 +5,17 @@ from selenium import webdriver
 import datetime
 from PageObjectModel.Pages.logowaniePage import LogowaniePages
 from PageObjectModel.Pages.reservationFlightPage import ReservationFlightPage
-from time import sleep
 
 
 class NewtoursDemoautRegistrationTest(unittest.TestCase):
 
     @classmethod
     def setUp(self):
-        self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
+        self.driver = webdriver.Firefox(executable_path=r'C:/NewtoursDemoau/PageObjectModel/Drivers/FirefoxDrive_24/geckodriver.exe')
         print("-----------------")
         print("Run Started at :" + str(datetime.datetime.now()))
 
-
+    @classmethod
     def tearDown(self):
         print("------------------------------------------------------------------")
         print("Run Completed at :" + str(datetime.datetime.now()))
@@ -54,7 +53,6 @@ class NewtoursDemoautRegistrationTest(unittest.TestCase):
         # Etap_3
         ReservationFlight.passFirst0_field("MARCELINA")
         ReservationFlight.passLast0_field("KOS")
-        sleep(5)
         ReservationFlight.select_pass0meal("Hindu")
         ReservationFlight.select_creditCard("MasterCard")
         ReservationFlight.creditnumber_field("123243556546")

@@ -1,5 +1,8 @@
 from selenium.webdriver.support.ui import Select
 from PageObjectModel.Locators.locator import Locators
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC, expected_conditions
 
 
 class ReservationFlightPage():
@@ -9,7 +12,11 @@ class ReservationFlightPage():
 
     #Etap_1
     def click_Flights(self):
-        self.driver.find_element_by_xpath(Locators.flights_button_xpath1).click()
+        flights_btn = WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable((By.XPATH, Locators.flights_button_xpath1)))
+        flights_btn.click()
+
+        # self.driver.find_element_by_xpath(Locators.flights_button_xpath1).click()
 
     def select_passCount(self, passCount):
         select = Select(self.driver.find_element_by_name(Locators.select_field_passCount))

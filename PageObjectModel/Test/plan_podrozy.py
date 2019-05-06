@@ -11,7 +11,7 @@ from PageObjectModel.Pages.planTravelsPage import PlanTravelsPage
 class PlanPodrozy_Pages(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox(executable_path=r'C:\driver_selenium\FirefoxDrive_24\geckodriver.exe')
+        self.driver = webdriver.Firefox(executable_path=r'C:/NewtoursDemoau/PageObjectModel/Drivers/FirefoxDrive_24/geckodriver.exe')
         print("-----------------")
         print("Run Started at :" + str(datetime.datetime.now()))
 
