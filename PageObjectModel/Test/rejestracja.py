@@ -1,30 +1,21 @@
 # _*_ coding: utf-8 _*_
 import unittest
-from selenium import webdriver
-import datetime
 from PageObjectModel.Pages.registrationPage import RegistrationPage
+from PageObjectModel.Application.application import Application_page
 
 
 class NewtoursDemoautRegistration(unittest.TestCase):
 
+    @classmethod
     def setUp(self):
-        self.driver = webdriver.Firefox(executable_path=r'C:/NewtoursDemoau/PageObjectModel/Drivers/FirefoxDrive_24/geckodriver.exe')
-        print("-----------------")
-        print("Run Started at :" + str(datetime.datetime.now()))
+        self.app = Application_page()
 
-
-
+    @classmethod
     def tearDown(self):
-        print("------------------------------------------------------------------")
-        print("Run Completed at :" + str(datetime.datetime.now()))
-        self.driver.close()
-        self.driver.quit()
+        self.app.destroy()
 
     def test_Rejestracja (self):
-        driver = self.driver
-        self.driver.get('http://newtours.demoaut.com/')
-        self.driver.maximize_window()
-
+        driver = self.app.driver
         registration = RegistrationPage(driver)
         registration.click_registration()
         registration.field_firstName("MARCELINA")
