@@ -47,7 +47,7 @@ class Locators():
     reserveFlights_field_xpath = "//*[@name='passFirst0']"
     passLast0_field_xpath = "//*[@name='passLast0']"
     select_field_pass0meal = "//*[@name='pass.0.meal']"
-    select_field_creditCard = "//*[@name='passLast0']"
+    select_field_creditCard = "//*[@name='creditCard']"
     creditnumber_field_xpath = "//*[@name='creditnumber']"
     select_field_cc_exp_dt_mn = "cc_exp_dt_mn"
     select_field_cc_exp_dt_yr = "cc_exp_dt_yr"
@@ -60,7 +60,7 @@ class Locators():
     billState_field_xpath = "//*[@name='billState']"
     billZip_field_xpath = "//*[@name='billZip']"
     select_field_billCountry = 'billCountry'
-    # ticketLess_xpath = "//*[@name='ticketLess']"
+    ticketLess_xpath1 = "//*[@name='ticketLess']"
     delAddress1_field_xpath = "//*[@name='delAddress1']"
     delCity_field_xpath = "//*[@name='delCity']"
     delState_field_xpath = "//*[@name='delState']"

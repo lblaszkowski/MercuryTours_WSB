@@ -68,21 +68,25 @@ class ReservationFlightPage():
 
     # Etap_3
     def passFirst0_field(self, passFirst0):
-        self.driver.find_element_by_xpath(Locators.reserveFlights_field_xpath).send_keys(passFirst0)
+        fieldPassFirst = self.driver.find_element_by_xpath(Locators.reserveFlights_field_xpath)
+        fieldPassFirst.clear()
+        fieldPassFirst.send_keys(passFirst0)
 
     def passLast0_field(self, passLast0):
         self.driver.find_element_by_xpath(Locators.passLast0_field_xpath).send_keys(passLast0)
 
     def select_pass0meal(self, pass0meal):
-        select = Select(self.driver.find_element_by_name(Locators.select_field_pass0meal))
+        select = Select(self.driver.find_element_by_xpath(Locators.select_field_pass0meal))
         select.select_by_visible_text(pass0meal)
 
     def select_creditCard(self, creditCard):
-        select = Select(self.driver.find_element_by_name(Locators.select_field_creditCard))
+        select = Select(self.driver.find_element_by_xpath(Locators.select_field_creditCard))
         select.select_by_visible_text(creditCard)
 
     def creditnumber_field(self, creditnumber):
-        self.driver.find_element_by_xpath(Locators.creditnumber_field_xpath).send_keys(creditnumber)
+        fieldCreditnumber = self.driver.find_element_by_xpath(Locators.creditnumber_field_xpath)
+        fieldCreditnumber.clear()
+        fieldCreditnumber.send_keys(creditnumber)
 
     def select_cc_exp_dt_mn(self, cc_exp_dt_mn):
          select = Select(self.driver.find_element_by_name(Locators.select_field_cc_exp_dt_mn))
@@ -93,50 +97,72 @@ class ReservationFlightPage():
          select.select_by_visible_text(cc_exp_dt_yr)
 
     def cc_frst_name_field(self, cc_frst_name):
-        self.driver.find_element_by_xpath(Locators.cc_frst_name_field_xpath).send_keys(cc_frst_name)
+        fieldCcFrstName = self.driver.find_element_by_xpath(Locators.cc_frst_name_field_xpath)
+        fieldCcFrstName.clear()
+        fieldCcFrstName.send_keys(cc_frst_name)
 
     def cc_mid_name_field(self, cc_mid_name):
-        self.driver.find_element_by_xpath(Locators.cc_mid_name_field_xpath).send_keys(cc_mid_name)
+        fieldCcMidName = self.driver.find_element_by_xpath(Locators.cc_mid_name_field_xpath)
+        fieldCcMidName.clear()
+        fieldCcMidName.send_keys(cc_mid_name)
 
     def cc_last_name_field(self, cc_last_name):
-        self.driver.find_element_by_xpath(Locators.cc_last_name_field_xpath).send_keys(cc_last_name)
+        fieldCcLastName = self.driver.find_element_by_xpath(Locators.cc_last_name_field_xpath)
+        fieldCcLastName.clear()
+        fieldCcLastName.send_keys(cc_last_name)
 
     def click_ticketLess(self):
         self.driver.find_element_by_xpath(Locators.ticketLess_xpath).click()
 
     def billAddress1_field(self, billAddress1):
-        self.driver.find_element_by_xpath(Locators.billAddress1_field_xpath).send_keys(billAddress1)
+        fieldBillAddress = self.driver.find_element_by_xpath(Locators.billAddress1_field_xpath)
+        fieldBillAddress.clear()
+        fieldBillAddress.send_keys(billAddress1)
 
     def billCity_field(self, billCity):
-       self.driver.find_element_by_xpath(Locators.billCity_field_xpath).send_keys(billCity)
+        fieldBillCity = self.driver.find_element_by_xpath(Locators.billCity_field_xpath)
+        fieldBillCity.clear()
+        fieldBillCity.send_keys(billCity)
 
     def billState_field(self, billState):
-        self.driver.find_element_by_xpath(Locators.billState_field_xpath).send_keys(billState)
+        fieldBillState = self.driver.find_element_by_xpath(Locators.billState_field_xpath)
+        fieldBillState.clear()
+        fieldBillState.send_keys(billState)
 
     def billZip_field(self, billZip):
-            self.driver.find_element_by_xpath(Locators.billZip_field_xpath).send_keys(billZip)
+        fieldBillZip = self.driver.find_element_by_xpath(Locators.billZip_field_xpath)
+        fieldBillZip.clear()
+        fieldBillZip.send_keys(billZip)
 
     def window_script(self):
-            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
     def select_billCountry(self, billCountry):
          select = Select(self.driver.find_element_by_name(Locators.select_field_billCountry))
          select.select_by_visible_text(billCountry)
 
     def click_ticketLess1(self):
-        self.driver.find_element_by_xpath(Locators.ticketLess1_xpath).click()
+        self.driver.find_element_by_xpath(Locators.ticketLess_xpath1).click()
 
     def delAddress1_field(self, delAddress1):
-        self.driver.find_element_by_xpath(Locators.delAddress1_field_xpath).send_keys(delAddress1)
+        fieldDelAddress1 = self.driver.find_element_by_xpath(Locators.delAddress1_field_xpath)
+        fieldDelAddress1.clear()
+        fieldDelAddress1.send_keys(delAddress1)
 
     def delCity_field(self, delCity):
-        self.driver.find_element_by_xpath(Locators.delCity_field_xpath).send_keys(delCity)
+        fieldDelCity = self.driver.find_element_by_xpath(Locators.delCity_field_xpath)
+        fieldDelCity.clear()
+        fieldDelCity.send_keys(delCity)
 
     def delState_field(self, delState):
-        self.driver.find_element_by_xpath(Locators.delState_field_xpath).send_keys(delState)
+        fieldDelState = self.driver.find_element_by_xpath(Locators.delState_field_xpath)
+        fieldDelState.clear()
+        fieldDelState.send_keys(delState)
 
     def delZip_field(self, delZip):
-        self.driver.find_element_by_xpath(Locators.delZip_field_xpath).send_keys(delZip)
+        fieldDelZip = self.driver.find_element_by_xpath(Locators.delZip_field_xpath)
+        fieldDelZip.clear()
+        fieldDelZip.send_keys(delZip)
 
     def select_delCountry(self, delCountry):
         select = Select(self.driver.find_element_by_name(Locators.select_field_delCountry))

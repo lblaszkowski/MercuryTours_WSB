@@ -4,6 +4,8 @@ import unittest
 from PageObjectModel.Pages.logowaniePage import LogowaniePages
 from PageObjectModel.Pages.reservationFlightPage import ReservationFlightPage
 from PageObjectModel.Application.application import Application_page
+from time import sleep
+
 
 class NewtoursDemoautRegistrationTest(unittest.TestCase):
 
@@ -58,12 +60,13 @@ class NewtoursDemoautRegistrationTest(unittest.TestCase):
         ReservationFlight.window_script()
         ReservationFlight.select_billCountry("POLAND")
         ReservationFlight.click_ticketLess1()
-        ReservationFlight.delAddress1_field("Jana Pawła II 40a/")
+        ReservationFlight.delAddress1_field("Jana Pawła II 40a/9")
         ReservationFlight.delCity_field("Kraków")
         ReservationFlight.delState_field("Kraków")
         ReservationFlight.delZip_field("12-098")
         ReservationFlight.select_delCountry("POLAND")
         ReservationFlight.switch_alert()
+        sleep(4)
         ReservationFlight.click_buyFlights()
         ReservationFlight.click_logout()
 
