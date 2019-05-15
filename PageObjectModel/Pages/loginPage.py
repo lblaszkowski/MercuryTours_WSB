@@ -1,11 +1,10 @@
 from PageObjectModel.Locators.locator import Locators
 
 
-class LogowaniePages():
+class LoginPages():
 
     def __init__(self, driver):
         self.driver = driver
-
 
     def click_signOnbutton(self):
         self.driver.find_element_by_xpath(Locators.signOnbutton_xpath).click()
@@ -22,3 +21,7 @@ class LogowaniePages():
 
     def click_login(self):
         self.driver.find_element_by_xpath(Locators.login_button_xpath).click()
+
+    def verification_page(self):
+        verification_page_click = self.driver.find_element_by_xpath(Locators.click_verification_xpath)
+        assert verification_page_click .text == "ITINERARY"

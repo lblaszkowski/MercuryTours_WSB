@@ -5,6 +5,8 @@ class Locators():
     userNameEmail_textbox_xpath = "//*[@name='userName']"
     password_textbox_xpath = "//*[@name='password']"
     login_button_xpath = "//*[@name='login']"
+    click_verification_xpath = "/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/a"
+
 
     #Plan Podróży
     flights_button_xpath = "/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td[2]/a"

@@ -1,7 +1,7 @@
 # _*_ coding: utf-8 _*_
 
 import unittest
-from PageObjectModel.Pages.logowaniePage import LogowaniePages
+from PageObjectModel.Pages.loginPage import LoginPages
 from PageObjectModel.Pages.reservationFlightPage import ReservationFlightPage
 from PageObjectModel.Application.application import Application_page
 from time import sleep
@@ -19,7 +19,7 @@ class NewtoursDemoautRegistrationTest(unittest.TestCase):
 
     def test_Rezerwacja_lotu(self):
         driver = self.app.driver
-        login = LogowaniePages(driver)
+        login = LoginPages(driver)
         login.click_signOnbutton()
         login.enter_username("marcelina.kos@interia.pl")
         login.enter_password("Test123")

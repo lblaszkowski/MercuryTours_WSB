@@ -4,7 +4,7 @@ import datetime
 class Application_page:
 
     def __init__(self):
-        self.driver = webdriver.Firefox(executable_path=r'C:/NewtoursDemoau/PageObjectModel/Drivers/FirefoxDrive_24/geckodriver.exe')
+        self.driver = webdriver.Firefox(executable_path=r'../Drivers/FirefoxDrive_24/geckodriver.exe')
         self.driver.get('http://newtours.demoaut.com/')
         self.driver.maximize_window()
         print("-----------------")
