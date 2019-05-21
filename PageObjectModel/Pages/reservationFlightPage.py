@@ -16,8 +16,6 @@ class ReservationFlightPage():
             EC.element_to_be_clickable((By.XPATH, Locators.flights_button_xpath1)))
         flights_btn.click()
 
-        # self.driver.find_element_by_xpath(Locators.flights_button_xpath1).click()
-
     def select_passCount(self, passCount):
         select = Select(self.driver.find_element_by_name(Locators.select_field_passCount))
         select.select_by_visible_text(passCount)
@@ -47,7 +45,7 @@ class ReservationFlightPage():
          select.select_by_visible_text(toMonth)
 
     def click_inputRadio(self):
-        self.driver.find_element_by_xpath(Locators.inputRadio_xpath ).click()
+        self.driver.find_element_by_xpath(Locators.inputRadio_xpath).click()
 
     def select_airline(self, airline):
         select = Select(self.driver.find_element_by_name(Locators.select_field_airline))

@@ -11,7 +11,7 @@ class Application_page:
         print("Run Started at :" + str(datetime.datetime.now()))
 
     def destroy(self):
-        print("-----------------------------------------------------")
+        print("------------------")
         print("Run Completed at :" + str(datetime.datetime.now()))
         self.driver.close()
         self.driver.quit()
