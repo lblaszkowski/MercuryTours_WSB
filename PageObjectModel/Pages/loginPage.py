@@ -4,7 +4,6 @@ from selenium.webdriver.support import expected_conditions as EC, expected_condi
 
 
 
-
 from PageObjectModel.Locators.locator import Locators
 
 
@@ -14,7 +13,8 @@ class LoginPages():
         self.driver = driver
 
     def click_signOnbutton(self):
-        self.driver.find_element_by_xpath(Locators.signOnbutton_xpath).click()
+        signOnbutton_click = self.driver.find_element_by_xpath(Locators.signOnbutton_xpath)
+        signOnbutton_click.click()
 
     def enter_username(self, usernameEmail):
         fieldUsername = self.driver.find_element_by_xpath(Locators.userNameEmail_textbox_xpath)

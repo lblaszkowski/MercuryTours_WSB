@@ -7,9 +7,9 @@ from PageObjectModel.Test.booking_flight import Booking_Flight_Pages
 
 def full_suite():
     test_suite = unittest.TestSuite()
-    # test_suite.addTest(unittest.makeSuite(Plan_Journey_Pages))
-    # test_suite.addTest(unittest.makeSuite(Login_Pages))
-    # test_suite.addTest(unittest.makeSuite(Registration_Pages))
+    test_suite.addTest(unittest.makeSuite(Plan_Journey_Pages))
+    test_suite.addTest(unittest.makeSuite(Login_Pages))
+    test_suite.addTest(unittest.makeSuite(Registration_Pages))
     test_suite.addTest(unittest.makeSuite(Booking_Flight_Pages))
     return test_suite
 

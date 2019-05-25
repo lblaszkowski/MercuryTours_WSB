@@ -19,7 +19,7 @@ class Booking_Flight_Pages(unittest.TestCase):
     def tearDown(self):
         self.app.destroy()
 
-    @data(*get_data("../Data_test/Data_test_pages/Data_test_login/data_test_login.csv"))
+    @data(*get_data("../Data_test/Data_test_pages/Data_test_booking_flight/data_test_booking_flight.csv"))
     @unpack
     def test_Booking_Flight(self, valid_email, valid_password, valid_selectPpassCount, valid_selectFromPort, valid_selectFfromMonth,
                             valid_selectFfromDay, valid_selectToPort, valid_selectToDay, valid_selectToMonth, valid_selectAairline,
