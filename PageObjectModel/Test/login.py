@@ -10,6 +10,7 @@ from time import sleep
 @ddt
 class Login_Pages(unittest.TestCase):
 
+
     @classmethod
     def setUp(self):
         self.app = Application_page()

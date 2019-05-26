@@ -1,4 +1,7 @@
 import unittest
+import os
+os.chdir(os.path.dirname(__file__))
+print('current working directory', os.getcwd())
 
 from PageObjectModel.Test.login import Login_Pages
 from PageObjectModel.Test.plan_journey import Plan_Journey_Pages
