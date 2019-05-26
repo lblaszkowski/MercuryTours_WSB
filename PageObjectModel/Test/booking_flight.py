@@ -1,5 +1,9 @@
 # _*_ coding: utf-8 _*_
 import unittest
+import os
+os.chdir(os.path.dirname(__file__))
+print('current working directory', os.getcwd())
+
 from PageObjectModel.Pages.loginPage import LoginPages
 from PageObjectModel.Pages.reservationFlightPage import ReservationFlightPage
 from PageObjectModel.Application.application import Application_page
