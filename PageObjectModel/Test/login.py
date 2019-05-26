@@ -1,18 +1,21 @@
 # _*_ coding: utf-8 _*_
 import unittest
-import os
-os.chdir(os.path.dirname(__file__))
-print('current working directory', os.getcwd())
+# import os
+# os.chdir(os.path.dirname(__file__))
+# print('current working directory', os.getcwd())
 
 from PageObjectModel.Pages.loginPage import LoginPages
 from PageObjectModel.Application.application import Application_page
 from PageObjectModel.Data_test.Function_for_downloading_test_data.test_data_loader import get_data
 from ddt import ddt, data, unpack
 from time import sleep
-
+import os
 
 @ddt
 class Login_Pages(unittest.TestCase):
+    file_path = os.path.dirname(__file__)
+    csv_path = "../Data_test/Data_test_pages/Data_test_login/data_test_login.csv"
+    data_path = os.path.join(file_path, csv_path)
 
 
     @classmethod
@@ -23,7 +26,8 @@ class Login_Pages(unittest.TestCase):
     def tearDown(self):
         self.app.destroy()
 
-    @data(*get_data("../Data_test/Data_test_pages/Data_test_login/data_test_login.csv"))
+    # @data(*get_data("../Data_test/Data_test_pages/Data_test_login/data_test_login.csv"))
+    @data(*get_data(data_path))
     @unpack
     def test_login(self, valid_email, valid_password):
         driver = self.app.driver
