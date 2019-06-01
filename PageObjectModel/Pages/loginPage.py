@@ -30,6 +30,6 @@ class LoginPages():
         self.driver.find_element_by_xpath(Locators.login_button_xpath).click()
 
     def verification_page(self):
-        verification_page_click = WebDriverWait(self.driver, 50).until(
+        verification_page_click = WebDriverWait(self.driver, 100).until(
             EC.element_to_be_clickable((By.XPATH, Locators.click_verification_xpath)))
         assert verification_page_click .text == "ITINERARY"

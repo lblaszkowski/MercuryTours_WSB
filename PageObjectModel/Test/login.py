@@ -32,8 +32,8 @@ class Login_Pages(unittest.TestCase):
         login.enter_username(valid_email)
         login.enter_password(valid_password)
         login.click_login()
-        sleep(3)
-        # print(login.verification_page())
+        sleep(5)
+        print(login.verification_page())
 
 if __name__ == '__main__':
      unittest.min()
