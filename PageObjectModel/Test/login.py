@@ -18,6 +18,8 @@ class Login_Pages(unittest.TestCase):
     @classmethod
     def setUp(self):
         self.app = Application_page()
+        self.app.bro.driver()
+
 
     @classmethod
     def tearDown(self):
