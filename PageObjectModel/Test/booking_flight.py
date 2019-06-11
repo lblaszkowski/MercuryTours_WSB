@@ -10,6 +10,7 @@ from PageObjectModel.Application.application import Application_page
 from PageObjectModel.Data_test.Function_for_downloading_test_data.test_data_loader import get_data
 from ddt import ddt, data, unpack
 from time import sleep
+import allure
 
 
 @ddt
@@ -23,6 +24,8 @@ class Booking_Flight_Pages(unittest.TestCase):
     def tearDown(self):
         self.app.destroy()
 
+    @allure.title("Title: Rezerwacja lotu")
+    @allure.description("Description: Rezerwacja lotu")
     @data(*get_data("../Data_test/Data_test_pages/Data_test_booking_flight/data_test_booking_flight.csv"))
     @unpack
     def test_Booking_Flight(self, valid_email, valid_password, valid_selectPpassCount, valid_selectFromPort, valid_selectFfromMonth,

@@ -9,6 +9,7 @@ from PageObjectModel.Application.application import Application_page
 from PageObjectModel.Data_test.Function_for_downloading_test_data.test_data_loader import get_data
 from ddt import ddt, data, unpack
 from time import sleep
+import allure
 
 
 @ddt
@@ -22,6 +23,8 @@ class Login_Pages(unittest.TestCase):
     def tearDown(self):
         self.app.destroy()
 
+    @allure.title("Title: logowanie do aplikacji")
+    @allure.description("Description:logowanie do aplikacji przez dane testowe")
     @data(*get_data("../Data_test/Data_test_pages/Data_test_login/data_test_login.csv"))
     @unpack
     def test_login(self, valid_email, valid_password):
