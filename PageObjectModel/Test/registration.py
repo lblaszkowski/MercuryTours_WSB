@@ -26,7 +26,7 @@ class Registration_Pages(unittest.TestCase):
     def test_registration(self, valid_FirstName, valid_LastName,valid_Phone, valid_Email,
                            valid_Address1, valid_Address2, valid_City, valid_State, valid_PostalCode,
                            valid_Select,valid_Password):
-        driver = self.app.driver
+        driver = self.app.bro.driver
         registration = RegistrationPage(driver)
         registration.click_registration()
         registration.field_firstName(valid_FirstName)

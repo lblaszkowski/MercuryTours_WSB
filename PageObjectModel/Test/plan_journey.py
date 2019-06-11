@@ -25,7 +25,7 @@ class Plan_Journey_Pages(unittest.TestCase):
     @data(*get_data("../Data_test/Data_test_pages/Data_test_plan_journey/data_test_plan_journey.csv"))
     @unpack
     def test_Plan_Journey(self, valid_email, valid_password):
-        driver = self.app.driver
+        driver = self.app.bro.driver
         login = LoginPages(driver)
         login.click_signOnbutton()
         login.enter_username(valid_email)

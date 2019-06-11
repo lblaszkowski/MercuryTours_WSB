@@ -33,7 +33,7 @@ class Booking_Flight_Pages(unittest.TestCase):
                             valid_fieldBillState, valid_fieldBillZip, valid_select_billCountry,
                             valid_delAddress1_field, valid_delCity_field,
                             valid_delState_field, valid_fieldDelZip, valid_selectDelCountry):
-        driver = self.app.driver
+        driver = self.app.bro.driver
         login = LoginPages(driver)
         login.click_signOnbutton()
         login.enter_username(valid_email)
@@ -84,6 +84,7 @@ class Booking_Flight_Pages(unittest.TestCase):
         sleep(4)
         ReservationFlight.click_buyFlights()
         ReservationFlight.click_logout()
+
 
 if __name__ == '__main__':
     unittest.min()
