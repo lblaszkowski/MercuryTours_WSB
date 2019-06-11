@@ -10,6 +10,7 @@ from PageObjectModel.Data_test.Function_for_downloading_test_data.test_data_load
 from ddt import ddt, data, unpack
 from time import sleep
 import allure
+from allure_commons.types import AttachmentType
 
 
 @ddt
@@ -19,12 +20,14 @@ class Login_Pages(unittest.TestCase):
     def setUp(self):
         self.app = Application_page()
 
+
     @classmethod
     def tearDown(self):
         self.app.destroy()
 
     @allure.title("Title: logowanie do aplikacji")
-    @allure.description("Description:logowanie do aplikacji przez dane testowe")
+    @allure.description("Description:logowanie do aplikacji")
+    @allure.step("logowanie do aplikacji '{1}'")
     @data(*get_data("../Data_test/Data_test_pages/Data_test_login/data_test_login.csv"))
     @unpack
     def test_login(self, valid_email, valid_password):
@@ -34,6 +37,7 @@ class Login_Pages(unittest.TestCase):
         login.enter_username(valid_email)
         login.enter_password(valid_password)
         login.click_login()
+        allure.attach(self.app.bro.driver.get_screenshot_as_png(), name='logowanie do aplikacji', attachment_type=AttachmentType.PNG)
         sleep(5)
         # print(login.verification_page())
 

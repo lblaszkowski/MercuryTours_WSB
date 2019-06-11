@@ -11,7 +11,7 @@ from PageObjectModel.Data_test.Function_for_downloading_test_data.test_data_load
 from ddt import ddt, data, unpack
 from time import sleep
 import allure
-
+from allure_commons.types import AttachmentType
 
 @ddt
 class Booking_Flight_Pages(unittest.TestCase):
@@ -26,6 +26,7 @@ class Booking_Flight_Pages(unittest.TestCase):
 
     @allure.title("Title: Rezerwacja lotu")
     @allure.description("Description: Rezerwacja lotu")
+    @allure.step("Rezerwacja lotu '{1}'")
     @data(*get_data("../Data_test/Data_test_pages/Data_test_booking_flight/data_test_booking_flight.csv"))
     @unpack
     def test_Booking_Flight(self, valid_email, valid_password, valid_selectPpassCount, valid_selectFromPort, valid_selectFfromMonth,
@@ -55,9 +56,11 @@ class Booking_Flight_Pages(unittest.TestCase):
         ReservationFlight.click_inputRadio()
         ReservationFlight.select_airline(valid_selectAairline)
         ReservationFlight.click_findFlights()
+        allure.attach(self.app.bro.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 1', attachment_type=AttachmentType.PNG)
         # Etap_2
         ReservationFlight.click_outFlight()
         ReservationFlight.click_inFlight()
+        allure.attach(self.app.bro.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 2', attachment_type=AttachmentType.PNG)
         ReservationFlight.click_reserveFlights()
         # Etap_3
         ReservationFlight.passFirst0_field(valid_fieldPassFirst0)
@@ -86,6 +89,8 @@ class Booking_Flight_Pages(unittest.TestCase):
         ReservationFlight.switch_alert()
         sleep(4)
         ReservationFlight.click_buyFlights()
+        allure.attach(self.app.bro.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 3',
+                      attachment_type=AttachmentType.PNG)
         ReservationFlight.click_logout()
 
 

@@ -9,6 +9,8 @@ from PageObjectModel.Application.application import Application_page
 from PageObjectModel.Data_test.Function_for_downloading_test_data.test_data_loader import get_data
 from ddt import ddt, data, unpack
 import allure
+from allure_commons.types import AttachmentType
+
 
 
 @ddt
@@ -24,6 +26,7 @@ class Registration_Pages(unittest.TestCase):
 
     @allure.title("Title: Rezerwacja lotu")
     @allure.description("Description: Rezerwacja lotu")
+    @allure.step("Plan lotu '{1}'")
     @data(*get_data("../Data_test/Data_test_pages/Data_test_registration/data_test_registration.csv"))
     @unpack
     def test_registration(self, valid_FirstName, valid_LastName,valid_Phone, valid_Email,
@@ -45,6 +48,8 @@ class Registration_Pages(unittest.TestCase):
         registration.field_email(valid_Email)
         registration.field_password(valid_Password)
         registration.field_confirmPassword(valid_Password)
+        allure.attach(self.app.bro.driver.get_screenshot_as_png(), name='Rezerwacja lotu',
+                      attachment_type=AttachmentType.PNG)
         registration.click_register()
 
 if __name__ == '__main__':
