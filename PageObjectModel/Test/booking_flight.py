@@ -55,8 +55,9 @@ class Booking_Flight_Pages(unittest.TestCase):
         ReservationFlight.select_toMonth(valid_selectToMonth)
         ReservationFlight.click_inputRadio()
         ReservationFlight.select_airline(valid_selectAairline)
+        allure.attach(self.app.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 1',
+                      attachment_type=AttachmentType.PNG)
         ReservationFlight.click_findFlights()
-        allure.attach(self.app.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 1', attachment_type=AttachmentType.PNG)
         # Etap_2
         ReservationFlight.click_outFlight()
         ReservationFlight.click_inFlight()
@@ -88,8 +89,10 @@ class Booking_Flight_Pages(unittest.TestCase):
         ReservationFlight.select_delCountry(valid_selectDelCountry)
         ReservationFlight.switch_alert()
         sleep(4)
-        ReservationFlight.click_buyFlights()
         allure.attach(self.app.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 3',
+                      attachment_type=AttachmentType.PNG)
+        ReservationFlight.click_buyFlights()
+        allure.attach(self.app.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 4',
                       attachment_type=AttachmentType.PNG)
         ReservationFlight.click_logout()
 
