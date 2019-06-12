@@ -19,6 +19,8 @@ class Registration_Pages(unittest.TestCase):
     @classmethod
     def setUp(self):
         self.app = Application_page()
+        self.driver = self.app.driver
+
 
     @classmethod
     def tearDown(self):
@@ -32,8 +34,7 @@ class Registration_Pages(unittest.TestCase):
     def test_registration(self, valid_FirstName, valid_LastName,valid_Phone, valid_Email,
                            valid_Address1, valid_Address2, valid_City, valid_State, valid_PostalCode,
                            valid_Select,valid_Password):
-        driver = self.app.bro.driver
-        registration = RegistrationPage(driver)
+        registration = RegistrationPage(self.driver)
         registration.click_registration()
         registration.field_firstName(valid_FirstName)
         registration.field_lastName(valid_LastName)
@@ -48,7 +49,7 @@ class Registration_Pages(unittest.TestCase):
         registration.field_email(valid_Email)
         registration.field_password(valid_Password)
         registration.field_confirmPassword(valid_Password)
-        allure.attach(self.app.bro.driver.get_screenshot_as_png(), name='Rezerwacja lotu',
+        allure.attach(self.app.driver.get_screenshot_as_png(), name='Rezerwacja lotu',
                       attachment_type=AttachmentType.PNG)
         registration.click_register()
 

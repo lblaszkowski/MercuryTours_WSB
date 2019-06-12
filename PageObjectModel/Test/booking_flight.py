@@ -19,6 +19,7 @@ class Booking_Flight_Pages(unittest.TestCase):
     @classmethod
     def setUp(self):
         self.app = Application_page()
+        self.driver = self.app.driver
 
     @classmethod
     def tearDown(self):
@@ -37,14 +38,13 @@ class Booking_Flight_Pages(unittest.TestCase):
                             valid_fieldBillState, valid_fieldBillZip, valid_select_billCountry,
                             valid_delAddress1_field, valid_delCity_field,
                             valid_delState_field, valid_fieldDelZip, valid_selectDelCountry):
-        driver = self.app.bro.driver
-        login = LoginPages(driver)
+        login = LoginPages(self.driver)
         login.click_signOnbutton()
         login.enter_username(valid_email)
         login.enter_password(valid_password)
         login.click_login()
         # Etap_1
-        ReservationFlight = ReservationFlightPage(driver)
+        ReservationFlight = ReservationFlightPage(self.driver)
         ReservationFlight.click_Flights()
         ReservationFlight.select_passCount(valid_selectPpassCount)
         ReservationFlight.select_fromPort(valid_selectFromPort)
@@ -56,11 +56,11 @@ class Booking_Flight_Pages(unittest.TestCase):
         ReservationFlight.click_inputRadio()
         ReservationFlight.select_airline(valid_selectAairline)
         ReservationFlight.click_findFlights()
-        allure.attach(self.app.bro.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 1', attachment_type=AttachmentType.PNG)
+        allure.attach(self.app.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 1', attachment_type=AttachmentType.PNG)
         # Etap_2
         ReservationFlight.click_outFlight()
         ReservationFlight.click_inFlight()
-        allure.attach(self.app.bro.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 2', attachment_type=AttachmentType.PNG)
+        allure.attach(self.app.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 2', attachment_type=AttachmentType.PNG)
         ReservationFlight.click_reserveFlights()
         # Etap_3
         ReservationFlight.passFirst0_field(valid_fieldPassFirst0)
@@ -89,7 +89,7 @@ class Booking_Flight_Pages(unittest.TestCase):
         ReservationFlight.switch_alert()
         sleep(4)
         ReservationFlight.click_buyFlights()
-        allure.attach(self.app.bro.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 3',
+        allure.attach(self.app.driver.get_screenshot_as_png(), name='Rezerwacja lotu - etap 3',
                       attachment_type=AttachmentType.PNG)
         ReservationFlight.click_logout()
 
