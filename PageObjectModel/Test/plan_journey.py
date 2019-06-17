@@ -6,7 +6,7 @@ print('current working directory', os.getcwd())
 
 from PageObjectModel.Pages.loginPage import LoginPages
 from PageObjectModel.Pages.planTravelsPage import PlanTravelsPage
-from PageObjectModel.Application.application import Application_page
+from PageObjectModel.Configuration.Application.application import Application_page
 from PageObjectModel.Data_test.Function_for_downloading_test_data.test_data_loader import get_data
 from ddt import ddt, data, unpack
 import allure

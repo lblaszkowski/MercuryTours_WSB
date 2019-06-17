@@ -5,7 +5,7 @@ os.chdir(os.path.dirname(__file__))
 print('current working directory', os.getcwd())
 
 from PageObjectModel.Pages.registrationPage import RegistrationPage
-from PageObjectModel.Application.application import Application_page
+from PageObjectModel.Configuration.Application.application import Application_page
 from PageObjectModel.Data_test.Function_for_downloading_test_data.test_data_loader import get_data
 from ddt import ddt, data, unpack
 import allure
