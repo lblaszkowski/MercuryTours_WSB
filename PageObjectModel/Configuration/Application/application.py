@@ -1,5 +1,5 @@
 import datetime
-from PageObjectModel.Configuration.Browser_pages.browser import Browser_pages_url
+from PageObjectModel.Configuration.Browser.browser import Browser_pages_url
 
 class Application_page:
 
