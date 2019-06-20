@@ -12,7 +12,7 @@ class ReservationFlightPage():
 
     #Etap_1
     def click_Flights(self):
-        flights_btn = WebDriverWait(self.driver, 20).until(
+        flights_btn = WebDriverWait(self.driver, 50).until(
             EC.element_to_be_clickable((By.XPATH, Locators.flights_button_xpath1)))
         flights_btn.click()
 
