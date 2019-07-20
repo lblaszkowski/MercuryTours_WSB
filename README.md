@@ -7,3 +7,5 @@ Projekt zawiera biblioteki:
 - DDT-(Data-driven Testing)
 - Pytest
 
+Wersja Python:
+- Python 3.7
