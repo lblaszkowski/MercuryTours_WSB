@@ -7,8 +7,8 @@ Strona Projektu:
 
 Projekt zawiera biblioteki:
 - Allure-2.6.0
-- DDT-(Data-driven Testing)
-- Pytest
+- DDT-(Data-driven Testing) 1.2.1
+- Pytest 4.4.1
 
 Wersja Python:
 - Python 3.7
